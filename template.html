@@ -592,10 +592,11 @@ for(let i=0;i<TOTAL;i++){
 
 // TOUCH
 let ty0=0,txMoved=false;
+function isInputActive(){return document.activeElement&&['TEXTAREA','INPUT'].includes(document.activeElement.tagName)}
 document.addEventListener('touchstart',e=>{ty0=e.touches[0].clientY;txMoved=false},{passive:true});
 document.addEventListener('touchmove',e=>{txMoved=true},{passive:true});
 document.addEventListener('touchend',e=>{
-  if(!txMoved)return;
+  if(!txMoved||isInputActive())return;
   const dy=ty0-e.changedTouches[0].clientY;
   if(Math.abs(dy)>45){dy>0?gp(cur+1):gp(cur-1)}
 },{passive:true});
@@ -603,7 +604,7 @@ document.addEventListener('touchend',e=>{
 // WHEEL — Mac trackpad safe
 let wheelAcc=0,wheelTimer=null,wheelLocked=false;
 document.addEventListener('wheel',e=>{
-  if(wheelLocked)return;
+  if(wheelLocked||isInputActive())return;
   clearTimeout(wheelTimer);
   wheelAcc+=e.deltaY;
   wheelTimer=setTimeout(()=>{
@@ -619,6 +620,7 @@ document.addEventListener('wheel',e=>{
 
 // KEYBOARD
 document.addEventListener('keydown',e=>{
+  if(isInputActive())return;
   if(['ArrowDown','ArrowRight',' '].includes(e.key)){e.preventDefault();gp(cur+1)}
   if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();gp(cur-1)}
 });
