@@ -8,28 +8,28 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
---ink:#0F0F0F;--paper:#F7F4EF;--accent:#C84B2F;--accent2:#1A4D6E;
---mid:#6B6760;--rule:rgba(15,15,15,0.1)
+  --ink:#0F0F0F;--paper:#F7F4EF;--accent:#C84B2F;--accent2:#1A4D6E;
+  --mid:#6B6760;--rule:rgba(15,15,15,0.1)
 }
 html,body{width:100%;height:100%;overflow:hidden;font-family:'Noto Sans TC',sans-serif}
 
 /* ── FULLPAGE (fixed) ── */
 #fp{width:100%;height:100%;position:relative;overflow:hidden}
 .page{
-position:absolute;inset:0;
-transform:translateY(100%);
-transition:transform 0.52s cubic-bezier(0.77,0,0.175,1);
-overflow:hidden;display:flex;flex-direction:column;will-change:transform
+  position:absolute;inset:0;
+  transform:translateY(100%);
+  transition:transform 0.52s cubic-bezier(0.77,0,0.175,1);
+  overflow:hidden;display:flex;flex-direction:column;will-change:transform
 }
 .page.active{transform:translateY(0%)}
 .page.above{transform:translateY(-100%)}
 
 /* ── NAV ── */
 nav{
-position:fixed;top:0;left:0;right:0;z-index:500;height:48px;
-display:flex;align-items:center;justify-content:space-between;
-padding:0 1.2rem;background:rgba(247,244,239,0.9);
-backdrop-filter:blur(12px);border-bottom:0.5px solid var(--rule)
+  position:fixed;top:0;left:0;right:0;z-index:500;height:48px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 1.2rem;background:rgba(247,244,239,0.9);
+  backdrop-filter:blur(12px);border-bottom:0.5px solid var(--rule)
 }
 .nav-brand{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;color:var(--mid);line-height:1.4}
 .nav-right{display:flex;align-items:center;gap:0.8rem}
@@ -59,10 +59,10 @@ backdrop-filter:blur(12px);border-bottom:0.5px solid var(--rule)
 
 .sec-eye{font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;color:var(--mid);margin-bottom:0.4rem}
 .sec-h{
-font-family:'Noto Serif TC',serif;font-weight:300;
-font-size:clamp(1.8rem,5.5vw,2.6rem);
-line-height:1.2;color:var(--ink);border-bottom:2px solid var(--accent);
-padding-bottom:0.6rem;margin-bottom:1rem
+  font-family:'Noto Serif TC',serif;font-weight:300;
+  font-size:clamp(1.8rem,5.5vw,2.6rem);
+  line-height:1.2;color:var(--ink);border-bottom:2px solid var(--accent);
+  padding-bottom:0.6rem;margin-bottom:1rem
 }
 
 /* ── COVER ── */
@@ -71,16 +71,16 @@ padding-bottom:0.6rem;margin-bottom:1rem
 .star{position:absolute;border-radius:50%;background:white;animation:twinkle var(--d,3s) ease-in-out infinite var(--delay,0s)}
 @keyframes twinkle{0%,100%{opacity:var(--lo,.12)}50%{opacity:var(--hi,.7)}}
 .nebula{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 30%,rgba(80,60,160,.18) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 70%,rgba(30,80,140,.15) 0%,transparent 70%),radial-gradient(ellipse 40% 60% at 60% 20%,rgba(100,40,120,.1) 0%,transparent 70%);pointer-events:none}
-#p0 .inner{position:relative;z-index:1;justify-content:flex-start;padding-top:68px;padding-bottom:3vh}
-.cover-eye{font-family:'Noto Serif TC',serif;font-weight:300;font-size:30px;letter-spacing:0.02em;color:#9CA3AF;margin-bottom:0.2rem}
-.cover-h{font-family:'Noto Serif TC',serif;font-weight:300;font-size:30px;line-height:1.25;color:#9CA3AF;margin-bottom:0.8rem}
+#p0 .inner{position:relative;z-index:1;justify-content:space-between;padding-top:68px;padding-bottom:3vh}
+.cover-eye{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;color:rgba(255,255,255,0.28);margin-bottom:0.5rem}
+.cover-h{font-family:'Noto Serif TC',serif;font-weight:300;font-size:clamp(2.3rem,7.2vw,4.1rem);line-height:1.15;color:var(--paper);margin-bottom:0.8rem}
 .cover-h em{font-style:normal;color:#E07058}
 .cover-sub{font-size:clamp(0.82rem,2.2vw,0.95rem);color:rgba(247,244,239,0.5);line-height:1.75}
-.metrics{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,0.06);border-top:0.5px solid rgba(255,255,255,0.08);padding-top:2.16vh}
+.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,0.06);border-top:0.5px solid rgba(255,255,255,0.08);margin-top:auto;padding-top:1.8vh}
 @media(min-width:500px){.metrics{grid-template-columns:repeat(4,1fr)}}
-.metric{padding:1.44vh 0.6rem}
-.metric-n{font-family:'DM Mono',monospace;font-size:clamp(1.68rem,5.4vw,2.4rem);color:#E07058;display:block}
-.metric-l{font-size:0.792rem;color:rgba(255,255,255,0.32);display:block;margin-top:0.24rem}
+.metric{padding:1.2vh 0.5rem}
+.metric-n{font-family:'DM Mono',monospace;font-size:clamp(1.4rem,4.5vw,2rem);color:#E07058;display:block}
+.metric-l{font-size:0.66rem;color:rgba(255,255,255,0.32);display:block;margin-top:0.2rem}
 
 /* ── CARDS ── */
 .card{background:white;border:0.5px solid var(--rule);border-radius:8px;padding:0.85rem 1rem;margin-bottom:0.45rem}
@@ -203,290 +203,302 @@ padding-bottom:0.6rem;margin-bottom:1rem
 <body>
 
 <nav>
-<div class="nav-brand">顧客體驗管理 CXM<br>by Rain Chen</div>
-<div class="nav-right">
-<span class="nav-pager" id="navPager">1 / 11</span>
-<div class="hamburger" onclick="openDrawer()"><span></span><span></span><span></span></div>
-</div>
+  <div class="nav-brand">顧客體驗管理 CXM<br>by Rain Chen</div>
+  <div class="nav-right">
+    <span class="nav-pager" id="navPager">1 / 11</span>
+    <div class="hamburger" onclick="openDrawer()"><span></span><span></span><span></span></div>
+  </div>
 </nav>
 
 <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
 <div class="drawer" id="drawer">
-<span class="drawer-close" onclick="closeDrawer()">✕ 關閉</span>
-<div class="drawer-item" onclick="gp(0);closeDrawer()">前言</div>
-<div class="drawer-item" onclick="gp(1);closeDrawer()">01 現場</div>
-<div class="drawer-item" onclick="gp(2);closeDrawer()">02 時間軸</div>
-<div class="drawer-item" onclick="gp(3);closeDrawer()">03 知識庫</div>
-<div class="drawer-item" onclick="gp(4);closeDrawer()">04 BCP</div>
-<div class="drawer-item" onclick="gp(5);closeDrawer()">05 成果</div>
-<div class="drawer-item" onclick="gp(6);closeDrawer()">06 AI 工具</div>
-<div class="drawer-item" onclick="gp(7);closeDrawer()">07 痛點診斷</div>
-<div class="drawer-item" onclick="gp(8);closeDrawer()">08 方法論</div>
-<div class="drawer-item" onclick="gp(9);closeDrawer()">09 下一步</div>
-<div class="drawer-item" onclick="gp(10);closeDrawer()">結論</div>
+  <span class="drawer-close" onclick="closeDrawer()">✕ 關閉</span>
+  <div class="drawer-item" onclick="gp(0);closeDrawer()">前言</div>
+  <div class="drawer-item" onclick="gp(1);closeDrawer()">01 現場</div>
+  <div class="drawer-item" onclick="gp(2);closeDrawer()">02 時間軸</div>
+  <div class="drawer-item" onclick="gp(3);closeDrawer()">03 知識庫</div>
+  <div class="drawer-item" onclick="gp(4);closeDrawer()">04 BCP</div>
+  <div class="drawer-item" onclick="gp(5);closeDrawer()">05 成果</div>
+  <div class="drawer-item" onclick="gp(6);closeDrawer()">06 AI 工具</div>
+  <div class="drawer-item" onclick="gp(7);closeDrawer()">07 痛點診斷</div>
+  <div class="drawer-item" onclick="gp(8);closeDrawer()">08 方法論</div>
+  <div class="drawer-item" onclick="gp(9);closeDrawer()">09 下一步</div>
+  <div class="drawer-item" onclick="gp(10);closeDrawer()">結論</div>
 </div>
 
 <div id="fp">
 
 <!-- P0 前言 -->
 <div class="page active" id="p0">
-<div class="stars" id="stars"></div>
-<div class="nebula"></div>
-<div class="inner" id="coverInner">
-<div>
-<p class="cover-eye">客服營運團隊</p>
-<h1 class="cover-h" id="coverHeading"><em>重建案例</em></h1>
-<p class="cover-sub">一個每天接不到電話 回不完信件<br>積壓 600 封客訴的客服中心<br>如何在 90 天內成為品牌信任支柱</p>
-</div>
-<div class="metrics">
-<div class="metric"><span class="metric-n">99%</span><span class="metric-l">電話接聽率</span></div>
-<div class="metric"><span class="metric-n">100%</span><span class="metric-l">信件即時回覆</span></div>
-<div class="metric"><span class="metric-n">4.8</span><span class="metric-l">Google 評分</span></div>
-<div class="metric"><span class="metric-n">99.2%</span><span class="metric-l">人效利用率</span></div>
-</div>
-</div>
+  <div class="stars" id="stars"></div>
+  <div class="nebula"></div>
+  <div class="inner" id="coverInner">
+    <div>
+      <p class="cover-eye">客服營運團隊</p>
+      <h1 class="cover-h" id="coverHeading"><em>重建案例</em></h1>
+      <p class="cover-sub">一個每天接不到電話 回不完信件<br>積壓 600 封客訴的客服中心<br>如何在 90 天內成為品牌信任支柱</p>
+    </div>
+    <div class="metrics">
+      <div class="metric"><span class="metric-n">99%</span><span class="metric-l">電話接聽率</span></div>
+      <div class="metric"><span class="metric-n">100%</span><span class="metric-l">信件即時回覆</span></div>
+      <div class="metric"><span class="metric-n">4.8</span><span class="metric-l">Google 評分</span></div>
+      <div class="metric"><span class="metric-n">99.2%</span><span class="metric-l">人效利用率</span></div>
+    </div>
+  </div>
 </div>
 
 <!-- P1 現場 -->
 <div class="page" id="p1" style="background:var(--paper)">
-<div class="inner top">
-<p class="sec-eye">01 現場</p>
-<h2 class="sec-h">瀕臨崩潰的客服團隊<br>該如何挽救</h2>
-<div class="card red">
-<span class="card-tag">現場狀況</span>
-<p class="card-title">600 封積壓 系統性失靈</p>
-<p class="card-desc">每月 200 封來信 3 個月零回覆 1000 通天來電 3–4 人接聽 後勤吃掉 50% 人力</p>
-</div>
-<div class="arrow-row">↓</div>
-<div class="card gold">
-<span class="card-tag">結構問題</span>
-<p class="card-title">知識靠記憶 工具脫離業務</p>
-<p class="card-desc">無知識庫 跨系統聯繫單 話後作業繁瑣 人力配比 50:50 結構錯誤</p>
-</div>
-<div class="arrow-row">↓</div>
-<div class="card blue">
-<span class="card-tag">品牌危機</span>
-<p class="card-title">合規風險 Google 評分 2.8</p>
-<p class="card-desc">金流 物流 電子發票具法定時效 延誤即違規 客訴不斷 品牌每天都在流失信任</p>
-</div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">01 現場</p>
+    <h2 class="sec-h">瀕臨崩潰的客服團隊<br>該如何挽救</h2>
+    <div class="card red">
+      <span class="card-tag">現場狀況</span>
+      <p class="card-title">600 封積壓  系統性失靈</p>
+      <p class="card-desc">每月 200 封來信  3 個月零回覆  1000 通天來電  3–4 人接聽  後勤吃掉 50% 人力</p>
+    </div>
+    <div class="arrow-row">↓</div>
+    <div class="card gold">
+      <span class="card-tag">結構問題</span>
+      <p class="card-title">知識靠記憶  工具脫離業務</p>
+      <p class="card-desc">無知識庫  跨系統聯繫單  話後作業繁瑣  人力配比 50:50 結構錯誤</p>
+    </div>
+    <div class="arrow-row">↓</div>
+    <div class="card blue">
+      <span class="card-tag">品牌危機</span>
+      <p class="card-title">合規風險  Google 評分 2.8</p>
+      <p class="card-desc">金流 物流 電子發票具法定時效  延誤即違規  客訴不斷  品牌每天都在流失信任</p>
+    </div>
+  </div>
 </div>
 
 <!-- P2 時間軸 -->
 <div class="page" id="p2" style="background:var(--paper)">
-<div class="inner top">
-<p class="sec-eye">02 時間軸</p>
-<h2 class="sec-h">每個月<br>做最關鍵那一件事</h2>
-<div class="tl">
-<div class="tl-item">
-<div class="tl-hd" onclick="toggleTl(this)">
-<div class="tl-num m1">M1</div>
-<div class="tl-meta"><p class="tl-title">診斷與止血</p><p class="tl-tag">DIAGNOSE &amp; STABILISE</p></div>
-<span class="tl-ch open">▶</span>
-</div>
-<div class="tl-bd open">
-<ul class="tl-list">
-<li><strong>服務量 人力 工時全盤點</strong> 數字支撐才能說服</li>
-<li>發現後勤 50% 是流程設計問題 不是人懶</li>
-<li>積壓信件按法定時效優先序清理</li>
-<li>知識庫計劃同步啟動 止血建制並行</li>
-</ul>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-hd" onclick="toggleTl(this)">
-<div class="tl-num m2">M2</div>
-<div class="tl-meta"><p class="tl-title">建制與訓練</p><p class="tl-tag">BUILD &amp; TRAIN</p></div>
-<span class="tl-ch">▶</span>
-</div>
-<div class="tl-bd">
-<ul class="tl-list">
-<li><strong>知識庫建成</strong> 3 父分類 20 子分類 300 問答</li>
-<li>新舊人同步訓練 品質有標準可複製</li>
-<li>QA 機制 錄音質檢 評分表 輔導閉環</li>
-<li>跨部門與廠商流程優化提案</li>
-</ul>
-</div>
-</div>
-<div class="tl-item">
-<div class="tl-hd" onclick="toggleTl(this)">
-<div class="tl-num m3">M3</div>
-<div class="tl-meta"><p class="tl-title">自動化與永續</p><p class="tl-tag">AUTOMATE &amp; SUSTAIN</p></div>
-<span class="tl-ch">▶</span>
-</div>
-<div class="tl-bd">
-<ul class="tl-list">
-<li><strong>代理人機制</strong> 全員無痛休假 組織不因人離開停擺</li>
-<li>小主管培訓 成功方法複製到下一層</li>
-<li>數據分析自動化 報表不再靠人工</li>
-<li>輔導方案自動化 BCP 正式落地</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">02 時間軸</p>
+    <h2 class="sec-h">每個月<br>做最關鍵那一件事</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-hd" onclick="toggleTl(this)">
+          <div class="tl-num m1">M1</div>
+          <div class="tl-meta"><p class="tl-title">診斷與止血</p><p class="tl-tag">DIAGNOSE &amp; STABILISE</p></div>
+          <span class="tl-ch open">▶</span>
+        </div>
+        <div class="tl-bd open">
+          <ul class="tl-list">
+            <li><strong>服務量 人力 工時全盤點</strong>  數字支撐才能說服</li>
+            <li>發現後勤 50% 是流程設計問題  不是人懶</li>
+            <li>積壓信件按法定時效優先序清理</li>
+            <li>知識庫計劃同步啟動  止血建制並行</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-hd" onclick="toggleTl(this)">
+          <div class="tl-num m2">M2</div>
+          <div class="tl-meta"><p class="tl-title">建制與訓練</p><p class="tl-tag">BUILD &amp; TRAIN</p></div>
+          <span class="tl-ch">▶</span>
+        </div>
+        <div class="tl-bd">
+          <ul class="tl-list">
+            <li><strong>知識庫建成</strong>  3 父分類  20 子分類  300 問答</li>
+            <li>新舊人同步訓練  品質有標準可複製</li>
+            <li>QA 機制  錄音質檢 評分表 輔導閉環</li>
+            <li>跨部門與廠商流程優化提案</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-hd" onclick="toggleTl(this)">
+          <div class="tl-num m3">M3</div>
+          <div class="tl-meta"><p class="tl-title">自動化與永續</p><p class="tl-tag">AUTOMATE &amp; SUSTAIN</p></div>
+          <span class="tl-ch">▶</span>
+        </div>
+        <div class="tl-bd">
+          <ul class="tl-list">
+            <li><strong>代理人機制</strong>  全員無痛休假  組織不因人離開停擺</li>
+            <li>小主管培訓  成功方法複製到下一層</li>
+            <li>數據分析自動化  報表不再靠人工</li>
+            <li>輔導方案自動化  BCP 正式落地</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- P3 知識庫 -->
 <div class="page" id="p3" style="background:var(--paper)">
-<div class="inner top">
-<p class="sec-eye">03 知識庫</p>
-<h2 class="sec-h">回答品質<br>從靠人記憶到靠系統供應</h2>
-<div class="kb-rows">
-<div class="kb-row">
-<div class="kb-num">01</div>
-<div class="kb-text">
-<p class="kb-title">三大服務主軸</p>
-<p class="kb-desc">金流 物流 電子發票</p>
-</div>
-</div>
-<div class="kb-row">
-<div class="kb-num">02</div>
-<div class="kb-text">
-<p class="kb-title">父分類 5–8 項 由易到難區分技能層級</p>
-<div class="kb-tags">
-<span class="kb-tag">一般查詢</span>
-<span class="kb-tag">流程處理</span>
-<span class="kb-tag">跨部門協作</span>
-<span class="kb-tag sp">▲ 特殊升級</span>
-<span class="kb-tag rk">⚠ 高風險</span>
-</div>
-</div>
-</div>
-<div class="kb-row">
-<div class="kb-num">03</div>
-<div class="kb-text">
-<p class="kb-title">15–20 子分類 提供更精確的細節服務</p>
-</div>
-</div>
-<div class="kb-row">
-<div class="kb-num">04</div>
-<div class="kb-text">
-<p class="kb-title">總計 250–300 問答題</p>
-<p class="kb-desc">成為聊天機器人的訓練素材</p>
-</div>
-</div>
-</div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">03 知識庫</p>
+    <h2 class="sec-h">回答品質<br>從靠人記憶到靠系統供應</h2>
+    <div class="kb-rows">
+      <div class="kb-row">
+        <div class="kb-num">01</div>
+        <div class="kb-text">
+          <p class="kb-title">三大服務主軸</p>
+          <p class="kb-desc">金流  物流  電子發票</p>
+        </div>
+      </div>
+      <div class="kb-row">
+        <div class="kb-num">02</div>
+        <div class="kb-text">
+          <p class="kb-title">父分類 5–8 項  由易到難區分技能層級</p>
+          <div class="kb-tags">
+            <span class="kb-tag">一般查詢</span>
+            <span class="kb-tag">流程處理</span>
+            <span class="kb-tag">跨部門協作</span>
+            <span class="kb-tag sp">▲ 特殊升級</span>
+            <span class="kb-tag rk">⚠ 高風險</span>
+          </div>
+        </div>
+      </div>
+      <div class="kb-row">
+        <div class="kb-num">03</div>
+        <div class="kb-text">
+          <p class="kb-title">15–20 子分類  提供更精確的細節服務</p>
+        </div>
+      </div>
+      <div class="kb-row">
+        <div class="kb-num">04</div>
+        <div class="kb-text">
+          <p class="kb-title">總計 250–300 問答題</p>
+          <p class="kb-desc">成為聊天機器人的訓練素材</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- P4 BCP -->
 <div class="page" id="p4" style="background:var(--paper)">
-<div class="inner top">
-<p class="sec-eye">04 BCP 營運不中斷</p>
-<h2 class="sec-h">全團隊自動運作<br>服務不能停</h2>
-<div class="bcp-grid">
-<div class="bcp-card"><div class="bcp-icon">🔄</div><div class="bcp-title">代理人機制</div></div>
-<div class="bcp-card"><div class="bcp-icon">📋</div><div class="bcp-title">SOP 文件化</div></div>
-<div class="bcp-card"><div class="bcp-icon">📊</div><div class="bcp-title">數據自動化</div></div>
-<div class="bcp-card"><div class="bcp-icon">🎯</div><div class="bcp-title">輔導系統化</div></div>
-<div class="bcp-card"><div class="bcp-icon">🛡️</div><div class="bcp-title">風險分級應對</div></div>
-<div class="bcp-card"><div class="bcp-icon">✅</div><div class="bcp-title">驗收標準</div></div>
-</div>
-<div class="bcp-verdict">
-<p>就算主將不在場 服務品質也不下降</p>
-<span>這是 BCP 真正落地的唯一標準</span>
-</div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">04 BCP 營運不中斷</p>
+    <h2 class="sec-h">全團隊自動運作<br>服務不能停</h2>
+    <div class="bcp-grid">
+      <div class="bcp-card"><div class="bcp-icon">🔄</div><div class="bcp-title">代理人機制</div></div>
+      <div class="bcp-card"><div class="bcp-icon">📋</div><div class="bcp-title">SOP 文件化</div></div>
+      <div class="bcp-card"><div class="bcp-icon">📊</div><div class="bcp-title">數據自動化</div></div>
+      <div class="bcp-card"><div class="bcp-icon">🎯</div><div class="bcp-title">輔導系統化</div></div>
+      <div class="bcp-card"><div class="bcp-icon">🛡️</div><div class="bcp-title">風險分級應對</div></div>
+      <div class="bcp-card"><div class="bcp-icon">✅</div><div class="bcp-title">驗收標準</div></div>
+    </div>
+    <div class="bcp-verdict">
+      <p>就算主將不在場  服務品質也不下降</p>
+      <span>這是 BCP 真正落地的唯一標準</span>
+    </div>
+  </div>
 </div>
 
 <!-- P5 成果 -->
 <div class="page" id="p5" style="background:var(--paper)">
-<div class="inner top">
-<p class="sec-eye">05 成果</p>
-<h2 class="sec-h">90 天<br>數字說明一切</h2>
-<div class="res-grid">
-<div class="res-card">
-<div class="res-from">起點 20%</div>
-<div class="res-val" id="r1">20%</div>
-<div class="res-lbl">電話接聽率</div>
-<div class="res-note">人力結構重整後近乎全接</div>
-</div>
-<div class="res-card">
-<div class="res-from">積壓 600 封</div>
-<div class="res-val" id="r2">積壓中</div>
-<div class="res-lbl">信件即時回覆率</div>
-<div class="res-note">第二個月起維持 100%</div>
-</div>
-<div class="res-card">
-<div class="res-from">起點 2.8 分</div>
-<div class="res-val" id="r3">2.8</div>
-<div class="res-lbl">Google 評分</div>
-<div class="res-note">回到消費者信任區間</div>
-</div>
-<div class="res-card">
-<div class="res-from">後勤 50% 一線 50%</div>
-<div class="res-val" id="r4">失能</div>
-<div class="res-lbl">人效利用率</div>
-<div class="res-note">人效值最佳運用的成果</div>
-</div>
-</div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">05 成果</p>
+    <h2 class="sec-h">90 天<br>數字說明一切</h2>
+    <div class="res-grid">
+      <div class="res-card">
+        <div class="res-from">起點 20%</div>
+        <div class="res-val" id="r1">20%</div>
+        <div class="res-lbl">電話接聽率</div>
+        <div class="res-note">人力結構重整後近乎全接</div>
+      </div>
+      <div class="res-card">
+        <div class="res-from">積壓 600 封</div>
+        <div class="res-val" id="r2">積壓中</div>
+        <div class="res-lbl">信件即時回覆率</div>
+        <div class="res-note">第二個月起維持 100%</div>
+      </div>
+      <div class="res-card">
+        <div class="res-from">起點 2.8 分</div>
+        <div class="res-val" id="r3">2.8</div>
+        <div class="res-lbl">Google 評分</div>
+        <div class="res-note">回到消費者信任區間</div>
+      </div>
+      <div class="res-card">
+        <div class="res-from">後勤 50%  一線 50%</div>
+        <div class="res-val" id="r4">失能</div>
+        <div class="res-lbl">人效利用率</div>
+        <div class="res-note">人效值最佳運用的成果</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- P6 AI工具 -->
 <div class="page" id="p6" style="background:var(--paper)">
-<div class="inner top">
-<p class="sec-eye">06 AI 工具</p>
-<h2 class="sec-h">現在的 AI 能力<br>可以這樣做</h2>
-<p style="font-size:0.78rem;color:var(--mid);margin-bottom:0.55rem">點選情境 查看分類與建議回覆</p>
-<div class="ai-sc-grid" id="aiGrid"></div>
-<div class="ai-result" id="aiRes"><div class="ai-ph">點選上方情境查看分析</div></div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">06 AI 工具</p>
+    <h2 class="sec-h">現在的 AI 能力<br>可以這樣做</h2>
+    <div style="display:flex;gap:0.4rem;margin-bottom:0.55rem;flex-wrap:wrap">
+      <button class="ai-mode-btn active" id="btnScenario" onclick="switchMode('scenario')" style="font-size:0.75rem;padding:0.35rem 0.8rem;border-radius:4px;border:0.5px solid var(--rule);background:var(--ink);color:var(--paper);cursor:pointer">預設情境</button>
+      <button class="ai-mode-btn" id="btnLive" onclick="switchMode('live')" style="font-size:0.75rem;padding:0.35rem 0.8rem;border-radius:4px;border:0.5px solid var(--rule);background:white;color:var(--mid);cursor:pointer">即時分析</button>
+    </div>
+    <div id="modeScenario">
+      <p style="font-size:0.75rem;color:var(--mid);margin-bottom:0.5rem">點選情境  查看分類與建議回覆</p>
+      <div class="ai-sc-grid" id="aiGrid"></div>
+      <div class="ai-result" id="aiRes"><div class="ai-ph">點選上方情境查看分析</div></div>
+    </div>
+    <div id="modeLive" style="display:none;flex-direction:column;gap:0.6rem">
+      <p style="font-size:0.75rem;color:var(--mid)">輸入任何客訴文字  AI 即時分類與建議回覆</p>
+      <textarea id="liveInput" placeholder="例如：我的付款已成功但訂單一直顯示未付款，等了兩個小時還沒解決⋯⋯" style="width:100%;height:80px;border:0.5px solid var(--rule);border-radius:6px;padding:0.6rem;font-family:'Noto Sans TC',sans-serif;font-size:0.8rem;color:var(--ink);background:var(--paper);resize:none;box-sizing:border-box"></textarea>
+      <button onclick="analyzeLive()" id="liveBtn" style="background:var(--ink);color:var(--paper);border:none;border-radius:6px;padding:0.6rem 1.2rem;font-size:0.82rem;cursor:pointer;align-self:flex-start;min-height:40px">分析客訴 →</button>
+      <div class="ai-result" id="liveRes" style="min-height:100px"><div class="ai-ph">輸入客訴文字後點擊分析</div></div>
+    </div>
+  </div>
 </div>
 
 <!-- P7 痛點診斷 -->
 <div class="page" id="p7" style="background:var(--paper)">
-<div class="inner top">
-<p class="sec-eye">07 痛點診斷</p>
-<h2 class="sec-h" style="font-size:clamp(1.1rem,3.5vw,1.7rem);margin-bottom:0.5rem">你的客服中心 目前痛點是什麼</h2>
-<div id="quizQuestions" class="quiz-questions"></div>
-<button class="quiz-submit" id="quizSubmit" onclick="submitQuiz()">查看診斷結果</button>
-<div class="quiz-result" id="quizResult">
-<div class="quiz-score" id="quizScore"></div>
-<div class="quiz-verdict" id="quizVerdict"></div>
-<div class="quiz-desc" id="quizDesc"></div>
-<button class="quiz-reset" onclick="resetQuiz()">重新診斷</button>
-</div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">07 痛點診斷</p>
+    <h2 class="sec-h" style="font-size:clamp(1.1rem,3.5vw,1.7rem);margin-bottom:0.5rem">你的客服中心 目前痛點是什麼</h2>
+    <div id="quizQuestions" class="quiz-questions"></div>
+    <button class="quiz-submit" id="quizSubmit" onclick="submitQuiz()">查看診斷結果</button>
+    <div class="quiz-result" id="quizResult">
+      <div class="quiz-score" id="quizScore"></div>
+      <div class="quiz-verdict" id="quizVerdict"></div>
+      <div class="quiz-desc" id="quizDesc"></div>
+      <button class="quiz-reset" onclick="resetQuiz()">重新診斷</button>
+    </div>
+  </div>
 </div>
 
 <!-- P8 方法論 -->
 <div class="page" id="p8" style="background:var(--paper)">
-<div class="inner top">
-<p class="sec-eye">08 方法論</p>
-<h2 class="sec-h">可遷移的決策邏輯<br>不只是一個案例</h2>
-<div class="pr-list">
-<div class="pr-item"><div class="pr-n">01</div><div><p class="pr-title">先診斷 再行動</p><p class="pr-desc">所有執行層問題都有結構性根因 找到根因才能真正解決</p></div></div>
-<div class="pr-item"><div class="pr-n">02</div><div><p class="pr-title">數字說話 不用感覺提案</p><p class="pr-desc">每一步都有數據支撐 決策快 說服成本低</p></div></div>
-<div class="pr-item"><div class="pr-n">03</div><div><p class="pr-title">個人能力 轉化為組織能力</p><p class="pr-desc">知識庫 SOP QA 代理人 每個設計目標都是主管離開也能運轉</p></div></div>
-<div class="pr-item"><div class="pr-n">04</div><div><p class="pr-title">止血與建制 同步並行</p><p class="pr-desc">等條件完美再行動 永遠來不及</p></div></div>
-<div class="pr-item"><div class="pr-n">05</div><div><p class="pr-title">會用 AI 的團隊 才有最高效率與品質</p><p class="pr-desc">Notion AI 整理知識庫 ChatGPT 生成 SOP 初稿 自動化工具串接報表 AI 客服分流常見問題 結構設計對了 AI 才真正有效</p></div></div>
-</div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">08 方法論</p>
+    <h2 class="sec-h">可遷移的決策邏輯<br>不只是一個案例</h2>
+    <div class="pr-list">
+      <div class="pr-item"><div class="pr-n">01</div><div><p class="pr-title">先診斷  再行動</p><p class="pr-desc">所有執行層問題都有結構性根因  找到根因才能真正解決</p></div></div>
+      <div class="pr-item"><div class="pr-n">02</div><div><p class="pr-title">數字說話  不用感覺提案</p><p class="pr-desc">每一步都有數據支撐  決策快  說服成本低</p></div></div>
+      <div class="pr-item"><div class="pr-n">03</div><div><p class="pr-title">個人能力  轉化為組織能力</p><p class="pr-desc">知識庫 SOP QA 代理人  每個設計目標都是主管離開也能運轉</p></div></div>
+      <div class="pr-item"><div class="pr-n">04</div><div><p class="pr-title">止血與建制  同步並行</p><p class="pr-desc">等條件完美再行動  永遠來不及</p></div></div>
+      <div class="pr-item"><div class="pr-n">05</div><div><p class="pr-title">會用 AI 的團隊  才有最高效率與品質</p><p class="pr-desc">Notion AI 整理知識庫  ChatGPT 生成 SOP 初稿  自動化工具串接報表  AI 客服分流常見問題  結構設計對了 AI 才真正有效</p></div></div>
+    </div>
+  </div>
 </div>
 
 <!-- P9 下一步 -->
 <div class="page" id="p9">
-<div class="inner top">
-<p class="sec-eye">09 下一步</p>
-<h2 class="sec-h">提升品牌形象<br>從客服開始</h2>
-<div class="next-cards">
-<div class="next-card"><p class="next-step">STEP 01</p><p class="next-title">系統性盤點</p><p class="next-desc">用數據找出真正的瓶頸在哪一層 問題的根源通常和你以為的不一樣</p></div>
-<div class="next-card"><p class="next-step">STEP 02</p><p class="next-title">知識從人腦移到系統</p><p class="next-desc">只要有人離職就覺得危險 代表知識還鎖在人身上 知識庫是一切改善的基礎</p></div>
-<div class="next-card"><p class="next-step">STEP 03</p><p class="next-title">設計不依賴你的組織</p><p class="next-desc">最好的管理者 是讓團隊在沒有你的時候也能正常運轉</p></div>
-</div>
-</div>
+  <div class="inner top">
+    <p class="sec-eye">09 下一步</p>
+    <h2 class="sec-h">提升品牌形象<br>從客服開始</h2>
+    <div class="next-cards">
+      <div class="next-card"><p class="next-step">STEP 01</p><p class="next-title">系統性盤點</p><p class="next-desc">用數據找出真正的瓶頸在哪一層  問題的根源通常和你以為的不一樣</p></div>
+      <div class="next-card"><p class="next-step">STEP 02</p><p class="next-title">知識從人腦移到系統</p><p class="next-desc">只要有人離職就覺得危險  代表知識還鎖在人身上  知識庫是一切改善的基礎</p></div>
+      <div class="next-card"><p class="next-step">STEP 03</p><p class="next-title">設計不依賴你的組織</p><p class="next-desc">最好的管理者  是讓團隊在沒有你的時候也能正常運轉</p></div>
+    </div>
+  </div>
 </div>
 
 <!-- P10 結論 -->
 <div class="page" id="p10">
-<div class="stars" id="stars2"></div>
-<div class="nebula"></div>
-<div class="inner" style="position:relative;z-index:1;justify-content:center;align-items:center;text-align:center;gap:1.5rem">
-<p class="concl-quote">客服不是<em>成本中心</em><br>而是品牌信任的<br><em>最後一道防線</em></p>
-<p class="concl-sub">CXM by Rain Chen</p>
-</div>
+  <div class="stars" id="stars2"></div>
+  <div class="nebula"></div>
+  <div class="inner" style="position:relative;z-index:1;justify-content:center;align-items:center;text-align:center;gap:1.5rem">
+    <p class="concl-quote">客服不是<em>成本中心</em><br>而是品牌信任的<br><em>最後一道防線</em></p>
+    <p class="concl-sub">CXM by Rain Chen</p>
+  </div>
 </div>
 
 </div><!-- end #fp -->
@@ -498,12 +510,12 @@ padding-bottom:0.6rem;margin-bottom:1rem
 
 // STARS (shared fn)
 function makeStars(el){
-for(let i=0;i<100;i++){
-const s=document.createElement('div');s.className='star';
-const sz=Math.random()*2+0.4;
-s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;--delay:${Math.random()*5}s;--lo:${0.05+Math.random()*0.12};--hi:${0.4+Math.random()*0.6}`;
-el.appendChild(s);
-}
+  for(let i=0;i<100;i++){
+    const s=document.createElement('div');s.className='star';
+    const sz=Math.random()*2+0.4;
+    s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;--delay:${Math.random()*5}s;--lo:${0.05+Math.random()*0.12};--hi:${0.4+Math.random()*0.6}`;
+    el.appendChild(s);
+  }
 }
 makeStars(document.getElementById('stars'));
 makeStars(document.getElementById('stars2'));
@@ -514,27 +526,27 @@ const TOTAL=pages.length;
 let cur=0,busy=false;
 
 function applyStates(next){
-pages.forEach((p,i)=>{
-p.classList.remove('active','above');
-if(i===next) p.classList.add('active');
-else if(i<next) p.classList.add('above');
-// pages > next get no class → translateY(100%) = below
-});
+  pages.forEach((p,i)=>{
+    p.classList.remove('active','above');
+    if(i===next) p.classList.add('active');
+    else if(i<next) p.classList.add('above');
+    // pages > next get no class → translateY(100%) = below
+  });
 }
 
 function gp(n){
-if(n<0||n>=TOTAL||n===cur||busy)return;
-busy=true;
-cur=n;
-applyStates(cur);
-updateNav();
-if(cur===5&&!resultsRan)runResults();
-setTimeout(()=>{busy=false},580);
+  if(n<0||n>=TOTAL||n===cur||busy)return;
+  busy=true;
+  cur=n;
+  applyStates(cur);
+  updateNav();
+  if(cur===5&&!resultsRan)runResults();
+  setTimeout(()=>{busy=false},580);
 }
 
 function updateNav(){
-document.getElementById('navPager').textContent=(cur+1)+' / '+TOTAL;
-document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  document.getElementById('navPager').textContent=(cur+1)+' / '+TOTAL;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
 }
 
 // init all pages to correct positions
@@ -542,40 +554,40 @@ applyStates(0);
 
 // Apply Notion headings if available
 if(typeof NOTION_DATA !== 'undefined' && NOTION_DATA.pages){
-const P = NOTION_DATA.pages;
-function applyHeading(pageKey, headingId, eyeId){
-const d = P[pageKey];
-if(!d) return;
-const h = document.getElementById(headingId);
-const e = document.getElementById(eyeId);
-if(h && d.heading) h.innerHTML = d.heading.replace(/\n/g,'<br>');
-if(e && d.sec_eye) e.innerHTML = d.sec_eye;
-}
-// cover
-const ch = document.getElementById('coverHeading');
-if(ch && P.cover && P.cover.heading) ch.innerHTML = P.cover.heading.replace(/\n/g,'<br>');
-const ce = document.querySelector('#p0 .cover-eye');
-if(ce && P.cover && P.cover.sec_eye) ce.innerHTML = P.cover.sec_eye;
-// each page sec-h
-const pageMap = {scene:'p1',timeline:'p2',kb:'p3',bcp:'p4',results:'p5',ai:'p6',quiz:'p7',principles:'p8',next:'p9',conclusion:'p10'};
-Object.entries(pageMap).forEach(([key,pid])=>{
-if(!P[key]) return;
-const pg = document.getElementById(pid);
-if(!pg) return;
-const h = pg.querySelector('.sec-h');
-const eye = pg.querySelector('.sec-eye');
-if(h && P[key].heading) h.innerHTML = P[key].heading.replace(/\n/g,'<br>');
-if(eye && P[key].sec_eye) eye.innerHTML = P[key].sec_eye;
-});
+  const P = NOTION_DATA.pages;
+  function applyHeading(pageKey, headingId, eyeId){
+    const d = P[pageKey];
+    if(!d) return;
+    const h = document.getElementById(headingId);
+    const e = document.getElementById(eyeId);
+    if(h && d.heading) h.innerHTML = d.heading.replace(/\n/g,'<br>');
+    if(e && d.sec_eye) e.innerHTML = d.sec_eye;
+  }
+  // cover
+  const ch = document.getElementById('coverHeading');
+  if(ch && P.cover && P.cover.heading) ch.innerHTML = P.cover.heading.replace(/\n/g,'<br>');
+  const ce = document.querySelector('#p0 .cover-eye');
+  if(ce && P.cover && P.cover.sec_eye) ce.innerHTML = P.cover.sec_eye;
+  // each page sec-h
+  const pageMap = {scene:'p1',timeline:'p2',kb:'p3',bcp:'p4',results:'p5',ai:'p6',quiz:'p7',principles:'p8',next:'p9',conclusion:'p10'};
+  Object.entries(pageMap).forEach(([key,pid])=>{
+    if(!P[key]) return;
+    const pg = document.getElementById(pid);
+    if(!pg) return;
+    const h = pg.querySelector('.sec-h');
+    const eye = pg.querySelector('.sec-eye');
+    if(h && P[key].heading) h.innerHTML = P[key].heading.replace(/\n/g,'<br>');
+    if(eye && P[key].sec_eye) eye.innerHTML = P[key].sec_eye;
+  });
 }
 
 // DOTS
 const dotsEl=document.getElementById('dots');
 for(let i=0;i<TOTAL;i++){
-const d=document.createElement('div');
-d.className='dot'+(i===0?' active':'');
-d.onclick=()=>gp(i);
-dotsEl.appendChild(d);
+  const d=document.createElement('div');
+  d.className='dot'+(i===0?' active':'');
+  d.onclick=()=>gp(i);
+  dotsEl.appendChild(d);
 }
 
 // TOUCH
@@ -583,32 +595,32 @@ let ty0=0,txMoved=false;
 document.addEventListener('touchstart',e=>{ty0=e.touches[0].clientY;txMoved=false},{passive:true});
 document.addEventListener('touchmove',e=>{txMoved=true},{passive:true});
 document.addEventListener('touchend',e=>{
-if(!txMoved)return;
-const dy=ty0-e.changedTouches[0].clientY;
-if(Math.abs(dy)>45){dy>0?gp(cur+1):gp(cur-1)}
+  if(!txMoved)return;
+  const dy=ty0-e.changedTouches[0].clientY;
+  if(Math.abs(dy)>45){dy>0?gp(cur+1):gp(cur-1)}
 },{passive:true});
 
 // WHEEL — Mac trackpad safe
 let wheelAcc=0,wheelTimer=null,wheelLocked=false;
 document.addEventListener('wheel',e=>{
-if(wheelLocked)return;
-clearTimeout(wheelTimer);
-wheelAcc+=e.deltaY;
-wheelTimer=setTimeout(()=>{
-if(Math.abs(wheelAcc)>30){
-wheelLocked=true;
-const dir=wheelAcc>0?1:-1;
-wheelAcc=0;
-gp(cur+dir);
-setTimeout(()=>{wheelLocked=false},700);
-} else { wheelAcc=0; }
-},60);
+  if(wheelLocked)return;
+  clearTimeout(wheelTimer);
+  wheelAcc+=e.deltaY;
+  wheelTimer=setTimeout(()=>{
+    if(Math.abs(wheelAcc)>30){
+      wheelLocked=true;
+      const dir=wheelAcc>0?1:-1;
+      wheelAcc=0;
+      gp(cur+dir);
+      setTimeout(()=>{wheelLocked=false},700);
+    } else { wheelAcc=0; }
+  },60);
 },{passive:true});
 
 // KEYBOARD
 document.addEventListener('keydown',e=>{
-if(['ArrowDown','ArrowRight',' '].includes(e.key)){e.preventDefault();gp(cur+1)}
-if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();gp(cur-1)}
+  if(['ArrowDown','ArrowRight',' '].includes(e.key)){e.preventDefault();gp(cur+1)}
+  if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();gp(cur-1)}
 });
 
 // DRAWER
@@ -617,109 +629,159 @@ function closeDrawer(){document.getElementById('drawer').classList.remove('open'
 
 // TIMELINE
 function toggleTl(hd){
-const bd=hd.nextElementSibling,ch=hd.querySelector('.tl-ch'),open=bd.classList.contains('open');
-document.querySelectorAll('.tl-bd').forEach(b=>b.classList.remove('open'));
-document.querySelectorAll('.tl-ch').forEach(c=>c.classList.remove('open'));
-if(!open){bd.classList.add('open');ch.classList.add('open')}
+  const bd=hd.nextElementSibling,ch=hd.querySelector('.tl-ch'),open=bd.classList.contains('open');
+  document.querySelectorAll('.tl-bd').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.tl-ch').forEach(c=>c.classList.remove('open'));
+  if(!open){bd.classList.add('open');ch.classList.add('open')}
 }
 
 // RESULTS
 let resultsRan=false;
 function runResults(){
-resultsRan=true;
-const dur=3000,fps=60,steps=Math.round(dur/(1000/fps));
-let step=0;
-const iv=setInterval(()=>{
-step++;const t=Math.min(step/steps,1);
-const ease=1-Math.pow(1-t,3);
-document.getElementById('r1').textContent=Math.round(20+(99-20)*ease)+'%';
-document.getElementById('r2').textContent=step<steps*0.25?'清理中…':Math.round(10+(100-10)*ease)+'%';
-document.getElementById('r3').textContent=(2.8+(4.8-2.8)*ease).toFixed(1);
-document.getElementById('r4').textContent=step<steps*0.08?'失能':Math.round(20+(99.2-20)*ease)+'%';
-if(step>=steps){
-clearInterval(iv);
-document.getElementById('r1').textContent='99%';
-document.getElementById('r2').textContent='100%';
-document.getElementById('r3').textContent='4.8';
-document.getElementById('r4').textContent='99.2%';
-}
-},1000/fps);
+  resultsRan=true;
+  const dur=3000,fps=60,steps=Math.round(dur/(1000/fps));
+  let step=0;
+  const iv=setInterval(()=>{
+    step++;const t=Math.min(step/steps,1);
+    const ease=1-Math.pow(1-t,3);
+    document.getElementById('r1').textContent=Math.round(20+(99-20)*ease)+'%';
+    document.getElementById('r2').textContent=step<steps*0.25?'清理中…':Math.round(10+(100-10)*ease)+'%';
+    document.getElementById('r3').textContent=(2.8+(4.8-2.8)*ease).toFixed(1);
+    document.getElementById('r4').textContent=step<steps*0.08?'失能':Math.round(20+(99.2-20)*ease)+'%';
+    if(step>=steps){
+      clearInterval(iv);
+      document.getElementById('r1').textContent='99%';
+      document.getElementById('r2').textContent='100%';
+      document.getElementById('r3').textContent='4.8';
+      document.getElementById('r4').textContent='99.2%';
+    }
+  },1000/fps);
 }
 
 // AI — 8 scenarios (removed 2 invoice ones)
 const sc = (typeof NOTION_DATA !== 'undefined' && NOTION_DATA.scenarios && NOTION_DATA.scenarios.length)
-? NOTION_DATA.scenarios.map(s=>({l:s.label,t:s.category,s:s.sub_type,e:s.emotion,r:s.risk,reply:s.reply}))
-: [
-{l:'付款成功訂單未付款',t:'金流',s:'付款狀態異常',e:'中',r:'一般',reply:'您好 非常抱歉造成您的困擾 付款與訂單系統有時會有短暫延遲 建議您保留付款成功截圖 我們將在 30 分鐘內為您確認訂單狀態並回覆結果 請稍候'},
-{l:'退款一週未到帳',t:'金流',s:'退款延遲',e:'高',r:'升級',reply:'您好 深感抱歉讓您等候這麼久 退款流程通常需 3–7 個工作天 若已超過此時限 我們將立即協助向金流方確認狀態 並在今日內提供進度回報 請提供訂單編號以便查詢'},
-{l:'帳號疑似被盜刷',t:'金流',s:'帳號安全',e:'高',r:'高風險',reply:'您好 我們非常重視帳號安全問題 請您立即至設定頁面變更密碼並解除所有已授權裝置 我們同步為您凍結可疑交易 專員將於 1 小時內與您聯繫 請保持電話暢通'},
-{l:'包裹顯示送達但沒收到',t:'物流',s:'包裹遺失',e:'高',r:'升級',reply:'您好 很抱歉發生這樣的困擾 請先確認住家門口 信箱及管理員處 同時我們將向物流商調閱送達照片 預計 24 小時內提供查核結果'},
-{l:'地址寫錯貨已出',t:'物流',s:'地址變更',e:'中',r:'一般',reply:'您好 瞭解您的需求 貨物已出庫後地址變更需直接與物流商協調 請提供訂單編號 我們立即幫您聯繫攔截並確認能否修改 2 小時內通知您結果'},
-{l:'包裹外箱破損',t:'物流',s:'貨損申訴',e:'中',r:'升級',reply:'您好 非常抱歉您收到受損的包裹 請先拍攝外箱破損照片及內容物現狀作為後續理賠依據 請提供訂單編號 我們將協助申請貨損理賠 處理時效約 3 個工作天'},
-{l:'電子發票沒收到',t:'電子發票',s:'發票補寄',e:'低',r:'一般',reply:'您好 電子發票通知信有時可能進入垃圾信件匣 建議您先行確認 若確認未收到 請提供訂單編號及您的電子信箱 我們將立即重新寄送 通常 30 分鐘內可收到'},
-{l:'統一編號打錯不讓改',t:'電子發票',s:'統編變更',e:'中',r:'升級',reply:'您好 電子發票一旦開立後依法不能直接修改統一編號 需要申請作廢後重開 請提供訂單編號 正確統一編號及公司抬頭 我們將協助您在今日內完成作廢及重開流程'},
+  ? NOTION_DATA.scenarios.map(s=>({l:s.label,t:s.category,s:s.sub_type,e:s.emotion,r:s.risk,reply:s.reply}))
+  : [
+  {l:'付款成功訂單未付款',t:'金流',s:'付款狀態異常',e:'中',r:'一般',reply:'您好  非常抱歉造成您的困擾  付款與訂單系統有時會有短暫延遲  建議您保留付款成功截圖  我們將在 30 分鐘內為您確認訂單狀態並回覆結果  請稍候'},
+  {l:'退款一週未到帳',t:'金流',s:'退款延遲',e:'高',r:'升級',reply:'您好  深感抱歉讓您等候這麼久  退款流程通常需 3–7 個工作天  若已超過此時限  我們將立即協助向金流方確認狀態  並在今日內提供進度回報  請提供訂單編號以便查詢'},
+  {l:'帳號疑似被盜刷',t:'金流',s:'帳號安全',e:'高',r:'高風險',reply:'您好  我們非常重視帳號安全問題  請您立即至設定頁面變更密碼並解除所有已授權裝置  我們同步為您凍結可疑交易  專員將於 1 小時內與您聯繫  請保持電話暢通'},
+  {l:'包裹顯示送達但沒收到',t:'物流',s:'包裹遺失',e:'高',r:'升級',reply:'您好  很抱歉發生這樣的困擾  請先確認住家門口 信箱及管理員處  同時我們將向物流商調閱送達照片  預計 24 小時內提供查核結果'},
+  {l:'地址寫錯貨已出',t:'物流',s:'地址變更',e:'中',r:'一般',reply:'您好  瞭解您的需求  貨物已出庫後地址變更需直接與物流商協調  請提供訂單編號  我們立即幫您聯繫攔截並確認能否修改  2 小時內通知您結果'},
+  {l:'包裹外箱破損',t:'物流',s:'貨損申訴',e:'中',r:'升級',reply:'您好  非常抱歉您收到受損的包裹  請先拍攝外箱破損照片及內容物現狀作為後續理賠依據  請提供訂單編號  我們將協助申請貨損理賠  處理時效約 3 個工作天'},
+  {l:'電子發票沒收到',t:'電子發票',s:'發票補寄',e:'低',r:'一般',reply:'您好  電子發票通知信有時可能進入垃圾信件匣  建議您先行確認  若確認未收到  請提供訂單編號及您的電子信箱  我們將立即重新寄送  通常 30 分鐘內可收到'},
+  {l:'統一編號打錯不讓改',t:'電子發票',s:'統編變更',e:'中',r:'升級',reply:'您好  電子發票一旦開立後依法不能直接修改統一編號  需要申請作廢後重開  請提供訂單編號 正確統一編號及公司抬頭  我們將協助您在今日內完成作廢及重開流程'},
 ];
 const grid=document.getElementById('aiGrid'),resEl=document.getElementById('aiRes');
 sc.forEach(s=>{
-const btn=document.createElement('button');btn.className='ai-btn';btn.textContent=s.l;
-btn.onclick=()=>{
-document.querySelectorAll('.ai-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
-const rc=s.r==='高風險'?'hi':s.r==='升級'?'md':'lo';
-resEl.innerHTML=`<div class="ai-tags"><span class="ai-tag type">${s.t}</span><span class="ai-tag type">${s.s}</span><span class="ai-tag ${rc}">${s.r}</span><span class="ai-tag">情緒 ${s.e}</span></div><div class="ai-reply">💬 建議回覆<br><br>${s.reply}</div>`;
-};
-grid.appendChild(btn);
+  const btn=document.createElement('button');btn.className='ai-btn';btn.textContent=s.l;
+  btn.onclick=()=>{
+    document.querySelectorAll('.ai-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+    const rc=s.r==='高風險'?'hi':s.r==='升級'?'md':'lo';
+    resEl.innerHTML=`<div class="ai-tags"><span class="ai-tag type">${s.t}</span><span class="ai-tag type">${s.s}</span><span class="ai-tag ${rc}">${s.r}</span><span class="ai-tag">情緒 ${s.e}</span></div><div class="ai-reply">💬 建議回覆<br><br>${s.reply}</div>`;
+  };
+  grid.appendChild(btn);
 });
 
 // QUIZ
 const qs = (typeof NOTION_DATA !== 'undefined' && NOTION_DATA.quizQuestions && NOTION_DATA.quizQuestions.length)
-? NOTION_DATA.quizQuestions.map(q=>q.question)
-: [
-'是否有完整的標準化知識庫 新人查文件就能回答問題',
-'信件是否能在 24 小時內全數回覆 無積壓',
-'主管或關鍵人員休假時 服務品質是否不受影響',
-'你知道團隊每天有多少人力花在後勤文書作業上嗎',
-'客訴發生時 團隊能在 30 分鐘內找到根本原因並提出處理方案嗎',
+  ? NOTION_DATA.quizQuestions.map(q=>q.question)
+  : [
+  '是否有完整的標準化知識庫  新人查文件就能回答問題',
+  '信件是否能在 24 小時內全數回覆  無積壓',
+  '主管或關鍵人員休假時  服務品質是否不受影響',
+  '你知道團隊每天有多少人力花在後勤文書作業上嗎',
+  '客訴發生時  團隊能在 30 分鐘內找到根本原因並提出處理方案嗎',
 ];
 const ans=new Array(5).fill(null);
 
 function buildQuiz(){
-const wrap=document.getElementById('quizQuestions');wrap.innerHTML='';
-qs.forEach((q,i)=>{
-const d=document.createElement('div');d.className='quiz-q';
-d.innerHTML=`<p class="quiz-q-text">${i+1} ${q}</p><div class="quiz-opts"><button class="quiz-opt${ans[i]===true?' yes-sel':''}" onclick="setAns(${i},true,this)">✓ 是</button><button class="quiz-opt${ans[i]===false?' no-sel':''}" onclick="setAns(${i},false,this)">✕ 否</button></div>`;
-wrap.appendChild(d);
-});
+  const wrap=document.getElementById('quizQuestions');wrap.innerHTML='';
+  qs.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='quiz-q';
+    d.innerHTML=`<p class="quiz-q-text">${i+1}  ${q}</p><div class="quiz-opts"><button class="quiz-opt${ans[i]===true?' yes-sel':''}" onclick="setAns(${i},true,this)">✓  是</button><button class="quiz-opt${ans[i]===false?' no-sel':''}" onclick="setAns(${i},false,this)">✕  否</button></div>`;
+    wrap.appendChild(d);
+  });
 }
 function setAns(i,v,btn){
-ans[i]=v;
-const opts=btn.closest('.quiz-opts').querySelectorAll('.quiz-opt');
-opts[0].classList.toggle('yes-sel',v===true);opts[0].classList.remove('no-sel');
-opts[1].classList.toggle('no-sel',v===false);opts[1].classList.remove('yes-sel');
-const ready=ans.every(a=>a!==null);
-const sub=document.getElementById('quizSubmit');
-sub.classList.toggle('ready',ready);
+  ans[i]=v;
+  const opts=btn.closest('.quiz-opts').querySelectorAll('.quiz-opt');
+  opts[0].classList.toggle('yes-sel',v===true);opts[0].classList.remove('no-sel');
+  opts[1].classList.toggle('no-sel',v===false);opts[1].classList.remove('yes-sel');
+  const ready=ans.every(a=>a!==null);
+  const sub=document.getElementById('quizSubmit');
+  sub.classList.toggle('ready',ready);
 }
 function submitQuiz(){
-if(!ans.every(a=>a!==null))return;
-const score=ans.filter(Boolean).length;
-const label=score>=4?'客服體系相對健康':score>=2?'有隱憂 需要檢視':'需要系統性重建';
-const desc=score>=4?'你的團隊有一定的系統基礎 若想進一步提升 可從數據自動化與人才培育著手':score>=2?'部分基礎已建立 但仍有明顯斷點 建議優先從知識庫和代理人機制補強':'從根本上重新設計你的客服體系 這件事的投報率遠高於你想像 先做盤點 再決定優先序';
-document.getElementById('quizScore').textContent=score+'/5';
-document.getElementById('quizVerdict').textContent=label;
-document.getElementById('quizDesc').textContent=desc;
-document.getElementById('quizQuestions').style.display='none';
-document.getElementById('quizSubmit').style.display='none';
-document.getElementById('quizResult').classList.add('show');
+  if(!ans.every(a=>a!==null))return;
+  const score=ans.filter(Boolean).length;
+  const label=score>=4?'客服體系相對健康':score>=2?'有隱憂  需要檢視':'需要系統性重建';
+  const desc=score>=4?'你的團隊有一定的系統基礎  若想進一步提升  可從數據自動化與人才培育著手':score>=2?'部分基礎已建立  但仍有明顯斷點  建議優先從知識庫和代理人機制補強':'從根本上重新設計你的客服體系  這件事的投報率遠高於你想像  先做盤點  再決定優先序';
+  document.getElementById('quizScore').textContent=score+'/5';
+  document.getElementById('quizVerdict').textContent=label;
+  document.getElementById('quizDesc').textContent=desc;
+  document.getElementById('quizQuestions').style.display='none';
+  document.getElementById('quizSubmit').style.display='none';
+  document.getElementById('quizResult').classList.add('show');
 }
 function resetQuiz(){
-ans.fill(null);
-document.getElementById('quizQuestions').style.display='';
-document.getElementById('quizSubmit').style.display='';
-document.getElementById('quizSubmit').classList.remove('ready');
-document.getElementById('quizResult').classList.remove('show');
-buildQuiz();
+  ans.fill(null);
+  document.getElementById('quizQuestions').style.display='';
+  document.getElementById('quizSubmit').style.display='';
+  document.getElementById('quizSubmit').classList.remove('ready');
+  document.getElementById('quizResult').classList.remove('show');
+  buildQuiz();
 }
 buildQuiz();
+
+// AI MODE SWITCH
+function switchMode(mode){
+  const sc=document.getElementById('modeScenario');
+  const lv=document.getElementById('modeLive');
+  const btnSc=document.getElementById('btnScenario');
+  const btnLv=document.getElementById('btnLive');
+  if(mode==='scenario'){
+    sc.style.display='';lv.style.display='none';
+    btnSc.style.background='var(--ink)';btnSc.style.color='var(--paper)';
+    btnLv.style.background='white';btnLv.style.color='var(--mid)';
+  } else {
+    sc.style.display='none';lv.style.display='flex';
+    btnLv.style.background='var(--ink)';btnLv.style.color='var(--paper)';
+    btnSc.style.background='white';btnSc.style.color='var(--mid)';
+  }
+}
+
+// LIVE AI ANALYSIS
+async function analyzeLive(){
+  const input=document.getElementById('liveInput').value.trim();
+  if(!input)return;
+  const btn=document.getElementById('liveBtn');
+  const res=document.getElementById('liveRes');
+  btn.disabled=true;btn.textContent='分析中⋯⋯';
+  res.innerHTML='<div class="ai-ph">AI 分析中  請稍候⋯⋯</div>';
+  try {
+    const resp=await fetch('https://cxm-ai-proxy.729rain.workers.dev',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({text:input})
+    });
+    const data=await resp.json();
+    const text=data.result||'分析失敗，請稍後再試。';
+    // Parse and display
+    const lines=text.split('\n').filter(l=>l.trim());
+    let html='';
+    lines.forEach(line=>{
+      if(line.includes('【問題分類】')||line.includes('【子類型】')||line.includes('【情緒強度】')||line.includes('【風險等級】')){
+        html+=`<div style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--mid);margin-bottom:0.3rem">${line}</div>`;
+      } else if(line.includes('【建議回覆】')){
+        html+=`<div style="background:var(--paper);border-radius:6px;padding:0.65rem;margin-top:0.5rem;font-size:0.8rem;line-height:1.7;color:var(--ink)">💬 ${line.replace('【建議回覆】','').trim()}</div>`;
+      }
+    });
+    res.innerHTML=html||`<div style="font-size:0.8rem;line-height:1.7;color:var(--ink)">${text}</div>`;
+  } catch(e){
+    res.innerHTML='<div class="ai-ph">連線失敗  請稍後再試</div>';
+  }
+  btn.disabled=false;btn.textContent='分析客訴 →';
+}
 </script>
 </body>
 </html>
