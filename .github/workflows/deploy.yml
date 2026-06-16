@@ -1,0 +1,44 @@
+name: Deploy Portfolio from Notion
+
+on:
+  # 手動觸發（你在 GitHub 點按鈕）
+  workflow_dispatch:
+
+  # Webhook 觸發（Notion 改動後自動觸發，需搭配 Make/n8n）
+  repository_dispatch:
+    types: [notion-updated]
+
+  # 每天凌晨 2 點自動同步一次（UTC+8 = 台灣時間早上 10 點）
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run build script
+        env:
+          NOTION_TOKEN:   ${{ secrets.NOTION_TOKEN }}
+          DB_PAGES:       ${{ secrets.DB_PAGES }}
+          DB_SCENES:      ${{ secrets.DB_SCENES }}
+          DB_SCENARIOS:   ${{ secrets.DB_SCENARIOS }}
+          DB_QUIZ:        ${{ secrets.DB_QUIZ }}
+          DB_PRINCIPLES:  ${{ secrets.DB_PRINCIPLES }}
+          DB_RESULTS:     ${{ secrets.DB_RESULTS }}
+        run: node build.js
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          publish_branch: gh-pages
