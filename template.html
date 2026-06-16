@@ -235,7 +235,7 @@ nav{
   <div class="inner" id="coverInner">
     <div>
       <p class="cover-eye">客服營運團隊</p>
-      <h1 class="cover-h"><em>重建案例</em></h1>
+      <h1 class="cover-h" id="coverHeading"><em>重建案例</em></h1>
       <p class="cover-sub">一個每天接不到電話 回不完信件<br>積壓 600 封客訴的客服中心<br>如何在 90 天內成為品牌信任支柱</p>
     </div>
     <div class="metrics">
@@ -539,6 +539,35 @@ function updateNav(){
 
 // init all pages to correct positions
 applyStates(0);
+
+// Apply Notion headings if available
+if(typeof NOTION_DATA !== 'undefined' && NOTION_DATA.pages){
+  const P = NOTION_DATA.pages;
+  function applyHeading(pageKey, headingId, eyeId){
+    const d = P[pageKey];
+    if(!d) return;
+    const h = document.getElementById(headingId);
+    const e = document.getElementById(eyeId);
+    if(h && d.heading) h.innerHTML = d.heading.replace(/\n/g,'<br>');
+    if(e && d.sec_eye) e.textContent = d.sec_eye;
+  }
+  // cover
+  const ch = document.getElementById('coverHeading');
+  if(ch && P.cover && P.cover.heading) ch.innerHTML = P.cover.heading.replace(/\n/g,'<br>');
+  const ce = document.querySelector('#p0 .cover-eye');
+  if(ce && P.cover && P.cover.sec_eye) ce.textContent = P.cover.sec_eye;
+  // each page sec-h
+  const pageMap = {scene:'p1',timeline:'p2',kb:'p3',bcp:'p4',results:'p5',ai:'p6',quiz:'p7',principles:'p8',next:'p9',conclusion:'p10'};
+  Object.entries(pageMap).forEach(([key,pid])=>{
+    if(!P[key]) return;
+    const pg = document.getElementById(pid);
+    if(!pg) return;
+    const h = pg.querySelector('.sec-h');
+    const eye = pg.querySelector('.sec-eye');
+    if(h && P[key].heading) h.innerHTML = P[key].heading.replace(/\n/g,'<br>');
+    if(eye && P[key].sec_eye) eye.textContent = P[key].sec_eye;
+  });
+}
 
 // DOTS
 const dotsEl=document.getElementById('dots');
