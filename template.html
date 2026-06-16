@@ -549,13 +549,13 @@ if(typeof NOTION_DATA !== 'undefined' && NOTION_DATA.pages){
     const h = document.getElementById(headingId);
     const e = document.getElementById(eyeId);
     if(h && d.heading) h.innerHTML = d.heading.replace(/\n/g,'<br>');
-    if(e && d.sec_eye) e.textContent = d.sec_eye;
+    if(e && d.sec_eye) e.innerHTML = d.sec_eye;
   }
   // cover
   const ch = document.getElementById('coverHeading');
   if(ch && P.cover && P.cover.heading) ch.innerHTML = P.cover.heading.replace(/\n/g,'<br>');
   const ce = document.querySelector('#p0 .cover-eye');
-  if(ce && P.cover && P.cover.sec_eye) ce.textContent = P.cover.sec_eye;
+  if(ce && P.cover && P.cover.sec_eye) ce.innerHTML = P.cover.sec_eye;
   // each page sec-h
   const pageMap = {scene:'p1',timeline:'p2',kb:'p3',bcp:'p4',results:'p5',ai:'p6',quiz:'p7',principles:'p8',next:'p9',conclusion:'p10'};
   Object.entries(pageMap).forEach(([key,pid])=>{
@@ -565,7 +565,7 @@ if(typeof NOTION_DATA !== 'undefined' && NOTION_DATA.pages){
     const h = pg.querySelector('.sec-h');
     const eye = pg.querySelector('.sec-eye');
     if(h && P[key].heading) h.innerHTML = P[key].heading.replace(/\n/g,'<br>');
-    if(eye && P[key].sec_eye) eye.textContent = P[key].sec_eye;
+    if(eye && P[key].sec_eye) eye.innerHTML = P[key].sec_eye;
   });
 }
 
